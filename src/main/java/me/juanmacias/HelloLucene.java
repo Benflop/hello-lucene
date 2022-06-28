@@ -39,7 +39,7 @@ public class HelloLucene {
         w.close();
 
         // 2. query
-        String queryString = args.length > 0 ? args[0] : "The Art of Computer Science";
+        String queryString = args.length > 0 ? args[0] : "9900333X";
 
         // the "title" arg specifies the default field to use
         // when no field is explicitly specified in the query.
@@ -77,7 +77,7 @@ public class HelloLucene {
         doc.add(new TextField("title", title, Field.Store.YES));
 
         // use a string field for isbn because we don't want it tokenized
-        doc.add(new TextField("isbn", isbn, Field.Store.YES));
+        doc.add(new StringField("isbn", isbn, Field.Store.YES));
         w.addDocument(doc);
     }
 }
