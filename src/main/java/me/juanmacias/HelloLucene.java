@@ -39,13 +39,13 @@ public class HelloLucene {
         w.close();
 
         // 2. query
-        String queryString = args.length > 0 ? args[0] : "lucene";
+        String queryString = args.length > 0 ? args[0] : "The Art of Computer Science";
 
         // the "title" arg specifies the default field to use
         // when no field is explicitly specified in the query.
         Query query = null;
         try {
-            String[] fields = {"title"};
+            String[] fields = {"isbn", "title"};
             query = new MultiFieldQueryParser(fields, analyzer).parse(queryString);
         } catch (org.apache.lucene.queryparser.classic.ParseException e) {
             e.printStackTrace();
@@ -68,7 +68,7 @@ public class HelloLucene {
         }
 
         // reader can only be closed when there
-        // is no need to access the documents any more.
+        // is no need to access the documents anymore.
         reader.close();
     }
 
@@ -77,7 +77,7 @@ public class HelloLucene {
         doc.add(new TextField("title", title, Field.Store.YES));
 
         // use a string field for isbn because we don't want it tokenized
-        doc.add(new StringField("isbn", isbn, Field.Store.YES));
+        doc.add(new TextField("isbn", isbn, Field.Store.YES));
         w.addDocument(doc);
     }
 }
