@@ -29,7 +29,7 @@
 	                      <arguments>
 	                          <argument>-classpath</argument>
 	                          <classpath />
-	                          <argument>me.juanmacias.HelloLucene</argument>
+	                          <argument>csc3010_project.HelloLucene</argument>
 	                      </arguments>
 	                  </configuration>
 	              </execution>

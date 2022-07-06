@@ -1,4 +1,4 @@
-package me.juanmacias;
+package csc3010_project;
 
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
